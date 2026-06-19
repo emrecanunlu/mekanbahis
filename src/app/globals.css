@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  /* Mekanbahis neon mor + pembe paleti */
+  --background: #0a0420;
+  --surface: #120831;
+  --surface-2: #1a0d3d;
+  --foreground: #f3f0ff;
+  --muted: #b0a7d6;
+
+  --pink: #ff2d92;
+  --pink-soft: #ff7ab8;
+  --violet: #a855f7;
+  --violet-deep: #6d28d9;
+  --cyan: #22d3ee;
+
+  --border: rgba(168, 85, 247, 0.18);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-pink: var(--pink);
+  --color-violet: var(--violet);
+  --color-violet-deep: var(--violet-deep);
+  --color-cyan: var(--cyan);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-sora);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  overflow-x: clip;
+  width: 100%;
+}
+
+* {
+  min-width: 0;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-sora), var(--font-inter), system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  .text-gradient-neon {
+    background: linear-gradient(
+      90deg,
+      #ff7ab8 0%,
+      #ff2d92 35%,
+      #a855f7 70%,
+      #6d28d9 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-pink {
+    color: var(--pink);
+  }
+  .text-violet {
+    color: var(--violet);
+  }
+  .text-muted {
+    color: var(--muted);
+  }
+
+  .border-soft {
+    border-color: var(--border);
+  }
+
+  .bg-surface {
+    background: var(--surface);
+  }
+  .bg-surface-2 {
+    background: var(--surface-2);
+  }
+
+  .prose-mb h2 {
+    @apply mt-8 mb-3 font-display text-2xl font-bold tracking-tight text-white;
+  }
+  .prose-mb h3 {
+    @apply mt-6 mb-2 font-display text-xl font-semibold text-white;
+  }
+  .prose-mb p {
+    @apply mb-4 text-[15px] leading-7 text-[#cfc6ef];
+  }
+  .prose-mb ul {
+    @apply mb-5 ml-5 list-disc space-y-1.5 text-[15px] leading-7 text-[#cfc6ef];
+  }
+  .prose-mb ol {
+    @apply mb-5 ml-5 list-decimal space-y-1.5 text-[15px] leading-7 text-[#cfc6ef];
+  }
+  .prose-mb a {
+    @apply text-pink underline-offset-2 transition-colors hover:text-[#ff7ab8] hover:underline;
+  }
+  .prose-mb strong {
+    @apply font-semibold text-white;
+  }
+  .prose-mb blockquote {
+    @apply my-5 rounded-r-xl border-l-4 border-pink bg-white/[0.03] px-5 py-3 italic text-[#dccdf6];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 85, 247, 0.4) transparent;
+}

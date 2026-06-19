@@ -1,0 +1,67 @@
+import Link from "next/link";
+import { BrandMark } from "./BrandMark";
+import { SITE, NAV } from "@/lib/site";
+
+export function Header() {
+  return (
+    <header className="sticky top-0 z-40 border-b border-soft bg-[#0a0420]/85 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+        <Link
+          href="/"
+          aria-label="Mekanbahis anasayfa"
+          className="flex items-center"
+        >
+          <BrandMark priority />
+        </Link>
+
+        <nav
+          className="hidden items-center gap-1 lg:flex"
+          aria-label="Ana menü"
+        >
+          {NAV.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-md px-3 py-2 text-sm font-medium text-[#d8d0f5] transition-colors hover:bg-white/[0.04] hover:text-white"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-2">
+          <a
+            href={SITE.telegramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Telegram kanalı"
+            className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border border-[#22d3ee]/40 bg-[#22d3ee]/10 text-[#7dd3fc] transition-colors hover:bg-[#22d3ee]/20"
+          >
+            <TelegramIcon />
+          </a>
+          <a
+            href={SITE.registerUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 cursor-pointer items-center rounded-md bg-gradient-to-r from-pink-500 to-fuchsia-600 px-4 text-sm font-semibold text-white shadow-[0_6px_20px_-8px_rgba(232,62,140,0.6)] transition-transform hover:from-pink-400 hover:to-fuchsia-500 active:translate-y-px"
+          >
+            Üye Ol
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function TelegramIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-5 w-5"
+      aria-hidden="true"
+    >
+      <path d="M21.94 4.32a1 1 0 0 0-1.34-1.1L2.85 10.04c-.95.36-.95 1.7.02 2.04l4.55 1.6 1.74 5.6c.22.7 1.1.9 1.6.35l2.42-2.62 4.6 3.4c.7.52 1.7.13 1.85-.74l2.3-15.36ZM9.84 13.97l8.04-7.13-6.36 8.5-1.68 5.6-.72-5.6Z" />
+    </svg>
+  );
+}

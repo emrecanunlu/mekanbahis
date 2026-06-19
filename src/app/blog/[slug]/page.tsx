@@ -1,0 +1,152 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { FloatingCta } from "@/components/FloatingCta";
+import { Sidebar } from "@/components/Sidebar";
+import { PostCard } from "@/components/BlogList";
+import {
+  POSTS,
+  getPostBySlug,
+  getRelatedPosts,
+  formatDate,
+} from "@/lib/posts";
+import { SITE } from "@/lib/site";
+
+export function generateStaticParams() {
+  return POSTS.map((p) => ({ slug: p.slug }));
+}
+
+type Params = { slug: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  if (!post) return { title: "Yazı bulunamadı" };
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      publishedTime: post.date,
+    },
+  };
+}
+
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  if (!post) notFound();
+  const related = getRelatedPosts(slug, 3);
+
+  return (
+    <>
+      <Header />
+      <main className="flex-1">
+        <section className="border-b border-soft">
+          <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+            <nav className="mb-5 flex items-center gap-2 text-xs text-[#b0a7d6]">
+              <Link href="/" className="transition-colors hover:text-pink">
+                Anasayfa
+              </Link>
+              <span>/</span>
+              <Link href="/blog" className="transition-colors hover:text-pink">
+                Blog
+              </Link>
+              <span>/</span>
+              <span className="text-white">{post.category}</span>
+            </nav>
+
+            <div className="flex flex-wrap items-center gap-2 text-xs">
+              <span className="rounded-full border border-pink/30 bg-pink/10 px-2.5 py-0.5 font-medium text-[#ff7ab8]">
+                {post.category}
+              </span>
+              <span className="text-[#b0a7d6]">{formatDate(post.date)}</span>
+              <span className="text-[#b0a7d6]">·</span>
+              <span className="text-[#b0a7d6]">{post.readingTime} dk okuma</span>
+            </div>
+            <h1 className="font-display mt-4 max-w-3xl text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
+              {post.title}
+            </h1>
+            <p className="mt-4 max-w-3xl text-[15px] leading-7 text-[#cfc6ef] sm:text-base">
+              {post.excerpt}
+            </p>
+          </div>
+        </section>
+
+        <section className="border-b border-soft">
+          <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+            <div className="grid gap-10 lg:grid-cols-[1fr_300px]">
+              <article className="min-w-0">
+                <div
+                  className="prose-mb max-w-none"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+
+                <div className="mt-10 rounded-2xl border border-pink/30 bg-gradient-to-br from-pink/[0.08] to-violet-500/[0.05] p-6">
+                  <h3 className="font-display text-lg font-bold text-white">
+                    Hemen Mekanbahis&apos;e Katıl
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-[#cfc6ef]">
+                    Yazıda bahsi geçen kampanyalardan faydalanmak için
+                    Mekanbahis güncel giriş adresine ulaş ve %100 hoş geldin
+                    bonusunu kap.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    <a
+                      href={SITE.registerUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-11 cursor-pointer items-center rounded-md bg-gradient-to-r from-pink-500 to-fuchsia-600 px-5 text-sm font-semibold text-white transition-transform hover:from-pink-400 hover:to-fuchsia-500 active:translate-y-px"
+                    >
+                      Hemen Üye Ol
+                    </a>
+                    <a
+                      href={SITE.loginUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-11 cursor-pointer items-center rounded-md border border-white/15 bg-white/[0.03] px-5 text-sm font-medium text-white transition-colors hover:border-white/30 hover:bg-white/[0.06]"
+                    >
+                      Güncel Giriş
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <Sidebar />
+            </div>
+          </div>
+        </section>
+
+        {related.length > 0 && (
+          <section className="border-b border-soft bg-[#0c0529]">
+            <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+              <h2 className="font-display border-b border-soft pb-3 text-xl font-bold tracking-tight text-white sm:text-2xl">
+                İlgili Yazılar
+              </h2>
+              <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {related.map((r) => (
+                  <li key={r.slug}>
+                    <PostCard post={r} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+      </main>
+      <Footer />
+      <FloatingCta />
+    </>
+  );
+}
