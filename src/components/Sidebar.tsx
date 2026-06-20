@@ -1,36 +1,26 @@
 import Link from "next/link";
-import { CATEGORIES, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
 import { getAllPosts, formatDate } from "@/lib/posts";
 
-export function Sidebar() {
-  const recent = getAllPosts().slice(0, 4);
+type SidebarProps = {
+  /** compact: yalnızca giriş kutusu — kısa içerik yanında */
+  variant?: "compact" | "default";
+};
+
+export function Sidebar({ variant = "default" }: SidebarProps) {
+  if (variant === "compact") {
+    return (
+      <aside className="self-start lg:sticky lg:top-20">
+        <LoginBox />
+      </aside>
+    );
+  }
+
+  const recent = getAllPosts().slice(0, 3);
 
   return (
-    <aside className="space-y-6">
-      <SidebarBox title="Mekanbahis Giriş">
-        <p className="text-sm leading-6 text-[#cfc6ef]">
-          Güncel giriş adresi <strong className="text-white">{SITE.domain}</strong>.
-          Erişim engelinden etkilenmemek için bu adresi favorilerine ekleyebilirsin.
-        </p>
-        <a
-          href={SITE.loginUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 inline-flex h-11 w-full cursor-pointer items-center justify-center rounded-md bg-gradient-to-r from-pink-500 to-fuchsia-600 px-4 text-sm font-semibold text-white transition-transform hover:from-pink-400 hover:to-fuchsia-500 active:translate-y-px"
-        >
-          Güncel Giriş Yap
-        </a>
-        <a
-          href={SITE.telegramUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-2 inline-flex h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-md border border-[#22d3ee]/40 bg-[#22d3ee]/10 px-4 text-sm font-semibold text-[#7dd3fc] transition-colors hover:bg-[#22d3ee]/20"
-        >
-          <TelegramIcon />
-          Telegram Kanalı
-        </a>
-      </SidebarBox>
-
+    <aside className="space-y-5 self-start lg:sticky lg:top-20">
+      <LoginBox />
       <SidebarBox title="Son Yazılar">
         <ul className="space-y-3">
           {recent.map((p) => (
@@ -40,32 +30,48 @@ export function Sidebar() {
                   {p.title}
                 </span>
                 <span className="mt-1 block text-xs text-[#b0a7d6]">
-                  {formatDate(p.date)} · {p.readingTime} dk okuma
+                  {formatDate(p.date)} · {p.readingTime} dk
                 </span>
               </Link>
             </li>
           ))}
         </ul>
-      </SidebarBox>
-
-      <SidebarBox title="Kategoriler">
-        <ul className="space-y-1.5">
-          {CATEGORIES.map((c) => (
-            <li key={c.slug}>
-              <a
-                href={`/blog?cat=${c.slug}`}
-                className="flex items-center justify-between rounded-md px-2 py-1.5 text-sm text-[#cfc6ef] transition-colors hover:bg-white/[0.04] hover:text-white"
-              >
-                <span>{c.name}</span>
-                <span className="text-xs text-[#7e76a8]">
-                  {getAllPosts().filter((p) => p.categorySlug === c.slug).length}
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <Link
+          href="/blog"
+          className="mt-3 block text-center text-xs font-semibold text-pink transition-colors hover:text-[#ff7ab8]"
+        >
+          Tüm yazılar →
+        </Link>
       </SidebarBox>
     </aside>
+  );
+}
+
+function LoginBox() {
+  return (
+    <SidebarBox title="Mekanbahis Giriş">
+      <p className="text-sm leading-6 text-[#cfc6ef]">
+        Güncel adres:{" "}
+        <strong className="text-white">{SITE.domain}</strong>
+      </p>
+      <a
+        href={SITE.loginUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 inline-flex h-11 w-full cursor-pointer items-center justify-center rounded-md bg-gradient-to-r from-pink-500 to-fuchsia-600 px-4 text-sm font-semibold text-white transition-transform hover:from-pink-400 hover:to-fuchsia-500 active:translate-y-px"
+      >
+        Güncel Giriş Yap
+      </a>
+      <a
+        href={SITE.telegramUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-2 inline-flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-md border border-[#22d3ee]/40 bg-[#22d3ee]/10 px-4 text-sm font-semibold text-[#7dd3fc] transition-colors hover:bg-[#22d3ee]/20"
+      >
+        <TelegramIcon />
+        Telegram
+      </a>
+    </SidebarBox>
   );
 }
 
@@ -78,7 +84,7 @@ function SidebarBox({
 }) {
   return (
     <section className="rounded-2xl border border-soft bg-surface p-5">
-      <h3 className="font-display mb-4 border-b border-soft pb-3 text-sm font-bold uppercase tracking-wider text-white">
+      <h3 className="font-display mb-3 border-b border-soft pb-2.5 text-sm font-bold uppercase tracking-wider text-white">
         {title}
       </h3>
       {children}

@@ -4,11 +4,30 @@ import { getAllPosts, formatDate, type Post } from "@/lib/posts";
 export function BlogList({
   limit,
   showHeader = true,
+  categorySlug,
 }: {
   limit?: number;
   showHeader?: boolean;
+  categorySlug?: string;
 }) {
-  const posts = limit ? getAllPosts().slice(0, limit) : getAllPosts();
+  let posts = categorySlug
+    ? getAllPosts().filter((p) => p.categorySlug === categorySlug)
+    : getAllPosts();
+  if (limit) posts = posts.slice(0, limit);
+
+  if (posts.length === 0) {
+    return (
+      <section className="rounded-2xl border border-soft bg-surface p-8 text-center">
+        <p className="text-[#cfc6ef]">Bu kategoride henüz yazı bulunmuyor.</p>
+        <Link
+          href="/blog"
+          className="mt-4 inline-flex text-sm font-semibold text-pink transition-colors hover:text-[#ff7ab8]"
+        >
+          Tüm yazılara dön
+        </Link>
+      </section>
+    );
+  }
 
   return (
     <section className="space-y-5">

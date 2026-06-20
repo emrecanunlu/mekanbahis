@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { BrandMark } from "./BrandMark";
-import { SITE, NAV } from "@/lib/site";
+import { MobileMenu } from "./MobileMenu";
+import { SITE, HEADER_NAV } from "@/lib/site";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-soft bg-[#0a0420]/85 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+      <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
           aria-label="Mekanbahis anasayfa"
-          className="flex items-center"
+          className="flex shrink-0 items-center"
         >
           <BrandMark priority />
         </Link>
@@ -18,18 +19,25 @@ export function Header() {
           className="hidden items-center gap-1 lg:flex"
           aria-label="Ana menü"
         >
-          {NAV.map((item) => (
+          {HEADER_NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-[#d8d0f5] transition-colors hover:bg-white/[0.04] hover:text-white"
+              className="whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium text-[#d8d0f5] transition-colors hover:bg-white/[0.04] hover:text-white"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
+          <Link
+            href="/arama"
+            aria-label="Site içi arama"
+            className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border border-soft text-[#d8d0f5] transition-colors hover:bg-white/[0.04] hover:text-white"
+          >
+            <SearchIcon />
+          </Link>
           <a
             href={SITE.telegramUrl}
             target="_blank"
@@ -43,13 +51,23 @@ export function Header() {
             href={SITE.registerUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-10 cursor-pointer items-center rounded-md bg-gradient-to-r from-pink-500 to-fuchsia-600 px-4 text-sm font-semibold text-white shadow-[0_6px_20px_-8px_rgba(232,62,140,0.6)] transition-transform hover:from-pink-400 hover:to-fuchsia-500 active:translate-y-px"
+            className="hidden h-10 cursor-pointer items-center rounded-md bg-gradient-to-r from-pink-500 to-fuchsia-600 px-4 text-sm font-semibold text-white shadow-[0_6px_20px_-8px_rgba(232,62,140,0.6)] transition-transform hover:from-pink-400 hover:to-fuchsia-500 active:translate-y-px sm:inline-flex"
           >
             Üye Ol
           </a>
+          <MobileMenu />
         </div>
       </div>
     </header>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden="true">
+      <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
+      <path d="m20 20-3.5-3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
   );
 }
 

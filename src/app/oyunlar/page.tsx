@@ -5,21 +5,42 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingCta } from "@/components/FloatingCta";
 import { Sidebar } from "@/components/Sidebar";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { JsonLd } from "@/components/JsonLd";
 import { GAMES } from "@/lib/games";
+import { buildMetadata, breadcrumbJsonLd, webPageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Oyunlar",
   description:
     "Mekanbahis'in tüm oyun kategorileri: canlı spor bahisleri, canlı casino, slot oyunları, Aviator, sanal bahis ve e-spor. Her kategori için detaylı tanıtım sayfaları.",
-};
+  path: "/oyunlar",
+  keywords: ["Mekanbahis oyunlar", "canlı bahis", "slot", "Aviator"],
+});
 
 export default function GamesIndex() {
   return (
     <>
       <Header />
+      <JsonLd
+        data={[
+          webPageJsonLd({
+            title: "Mekanbahis Oyunları",
+            description: "Canlı bahis, casino, slot ve Aviator kategorileri",
+            path: "/oyunlar",
+          }),
+          breadcrumbJsonLd([
+            { name: "Anasayfa", path: "/" },
+            { name: "Oyunlar", path: "/oyunlar" },
+          ]),
+        ]}
+      />
       <main className="flex-1">
         <section className="border-b border-soft">
           <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+            <Breadcrumbs
+              items={[{ label: "Anasayfa", href: "/" }, { label: "Oyunlar" }]}
+            />
             <span className="inline-flex items-center gap-2 rounded-full border border-pink/30 bg-pink/10 px-3 py-1 text-xs font-medium text-[#ff7ab8]">
               <span className="h-1.5 w-1.5 rounded-full bg-pink" />
               Oyun Kategorileri

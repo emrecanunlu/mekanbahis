@@ -2,22 +2,36 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { GameTypes } from "@/components/GameTypes";
 import { Bonuses } from "@/components/Bonuses";
-import { FAQ } from "@/components/FAQ";
+import { FAQ, FAQ_ITEMS } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { FloatingCta } from "@/components/FloatingCta";
 import { BlogList } from "@/components/BlogList";
 import { Sidebar } from "@/components/Sidebar";
+import { PartnerSites } from "@/components/PartnerSites";
+import { JsonLd } from "@/components/JsonLd";
+import { faqJsonLd, webPageJsonLd } from "@/lib/seo";
 
 export default function Home() {
   return (
     <>
       <Header />
+      <JsonLd
+        data={[
+          webPageJsonLd({
+            title: "Mekanbahis | Güvenilir Bahsin Mekanı",
+            description:
+              "Mekanbahis resmi tanıtım sitesi. Lisanslı canlı bahis, casino, slot, Aviator.",
+            path: "/",
+          }),
+          faqJsonLd(FAQ_ITEMS),
+        ]}
+      />
       <main className="flex-1">
         <Hero />
 
         <section className="border-b border-soft">
           <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-            <div className="grid gap-10 lg:grid-cols-[1fr_300px]">
+            <div className="grid gap-10 lg:grid-cols-[1fr_260px] lg:items-start">
               <article className="prose-mb max-w-none">
                 <h2>Mekanbahis Resmi Tanıtım Sitesi</h2>
                 <p>
@@ -46,20 +60,18 @@ export default function Home() {
                   <li>Komisyonsuz yatırım ve çekim işlemleri</li>
                 </ul>
               </article>
-              <Sidebar />
+              <Sidebar variant="compact" />
             </div>
           </div>
         </section>
 
         <GameTypes />
         <Bonuses />
+        <PartnerSites limit={4} title="Öne Çıkan Partner Siteler" />
 
         <section className="border-b border-soft">
           <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-            <div className="grid gap-10 lg:grid-cols-[1fr_300px]">
-              <BlogList limit={4} />
-              <Sidebar />
-            </div>
+            <BlogList limit={4} />
           </div>
         </section>
 

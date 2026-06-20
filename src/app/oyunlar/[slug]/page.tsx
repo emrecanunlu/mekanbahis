@@ -6,8 +6,16 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingCta } from "@/components/FloatingCta";
 import { Sidebar } from "@/components/Sidebar";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { JsonLd } from "@/components/JsonLd";
 import { GAMES, getGameBySlug, getOtherGames } from "@/lib/games";
 import { SITE } from "@/lib/site";
+import {
+  buildMetadata,
+  breadcrumbJsonLd,
+  faqJsonLd,
+  webPageJsonLd,
+} from "@/lib/seo";
 
 export function generateStaticParams() {
   return GAMES.map((g) => ({ slug: g.slug }));
@@ -23,15 +31,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const game = getGameBySlug(slug);
   if (!game) return { title: "Oyun bulunamadı" };
-  return {
+  return buildMetadata({
     title: game.title,
     description: game.intro.slice(0, 160),
-    openGraph: {
-      title: game.title,
-      description: game.intro.slice(0, 160),
-      images: [game.image],
-    },
-  };
+    path: `/oyunlar/${slug}`,
+    keywords: [game.badge, game.subtitle],
+    ogImage: game.image,
+  });
 }
 
 export default async function GameDetail({
@@ -47,20 +53,31 @@ export default async function GameDetail({
   return (
     <>
       <Header />
+      <JsonLd
+        data={[
+          webPageJsonLd({
+            title: game.title,
+            description: game.intro.slice(0, 160),
+            path: `/oyunlar/${slug}`,
+          }),
+          breadcrumbJsonLd([
+            { name: "Anasayfa", path: "/" },
+            { name: "Oyunlar", path: "/oyunlar" },
+            { name: game.title, path: `/oyunlar/${slug}` },
+          ]),
+          ...(game.faq.length > 0 ? [faqJsonLd(game.faq)] : []),
+        ]}
+      />
       <main className="flex-1">
         <section className="border-b border-soft">
           <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
-            <nav className="mb-5 flex items-center gap-2 text-xs text-[#b0a7d6]">
-              <Link href="/" className="transition-colors hover:text-pink">
-                Anasayfa
-              </Link>
-              <span>/</span>
-              <Link href="/oyunlar" className="transition-colors hover:text-pink">
-                Oyunlar
-              </Link>
-              <span>/</span>
-              <span className="text-white">{game.title}</span>
-            </nav>
+            <Breadcrumbs
+              items={[
+                { label: "Anasayfa", href: "/" },
+                { label: "Oyunlar", href: "/oyunlar" },
+                { label: game.title },
+              ]}
+            />
 
             <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_1fr]">
               <div>

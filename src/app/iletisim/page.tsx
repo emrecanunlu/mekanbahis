@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingCta } from "@/components/FloatingCta";
 import { ContactForm } from "@/components/ContactForm";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { JsonLd } from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
+import { buildMetadata, breadcrumbJsonLd, webPageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "İletişim",
   description:
     "Mekanbahis ile iletişime geçin. Üyelik, bonus, teknik destek ve genel sorularınız için formu doldurun veya Telegram kanalımıza yazın.",
-};
+  path: "/iletisim",
+  keywords: ["Mekanbahis iletişim", "Mekanbahis destek"],
+});
 
 const CHANNELS = [
   {
@@ -46,16 +50,25 @@ export default function ContactPage() {
   return (
     <>
       <Header />
+      <JsonLd
+        data={[
+          webPageJsonLd({
+            title: "İletişim",
+            description: "Mekanbahis iletişim ve destek kanalları",
+            path: "/iletisim",
+          }),
+          breadcrumbJsonLd([
+            { name: "Anasayfa", path: "/" },
+            { name: "İletişim", path: "/iletisim" },
+          ]),
+        ]}
+      />
       <main className="flex-1">
         <section className="border-b border-soft">
           <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-            <nav className="mb-5 flex items-center gap-2 text-xs text-[#b0a7d6]">
-              <Link href="/" className="transition-colors hover:text-pink">
-                Anasayfa
-              </Link>
-              <span>/</span>
-              <span className="text-white">İletişim</span>
-            </nav>
+            <Breadcrumbs
+              items={[{ label: "Anasayfa", href: "/" }, { label: "İletişim" }]}
+            />
 
             <span className="inline-flex items-center gap-2 rounded-full border border-pink/30 bg-pink/10 px-3 py-1 text-xs font-medium text-[#ff7ab8]">
               <span className="h-1.5 w-1.5 rounded-full bg-pink" />

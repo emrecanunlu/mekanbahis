@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  buildMetadata,
+  organizationJsonLd,
+  websiteJsonLd,
+} from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,42 +20,38 @@ const sora = Sora({
   display: "swap",
 });
 
-const SITE_URL = "https://mekanbahis592.com";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  ...buildMetadata({
+    title: "Mekanbahis | Güvenilir Bahsin Mekanı",
+    description:
+      "Mekanbahis resmi tanıtım sitesi. Lisanslı canlı bahis, casino, slot, Aviator. Güncel giriş, bonus rehberleri, partner siteler ve 7/24 destek.",
+    path: "/",
+    keywords: [
+      "Mekanbahis giriş",
+      "Mekanbahis güncel adres",
+      "canlı bahis",
+      "canlı casino",
+      "slot oyunları",
+      "Aviator",
+      "bonus",
+    ],
+  }),
   title: {
     default: "Mekanbahis | Güvenilir Bahsin Mekanı",
     template: "%s | Mekanbahis",
   },
-  description:
-    "Mekanbahis resmi tanıtım sitesi. Lisanslı canlı bahis, casino, slot, Aviator ve sanal oyunlar. Yüksek oranlar, hızlı ödeme ve 7/24 destek için güncel giriş adresi.",
-  keywords: [
-    "Mekanbahis",
-    "Mekanbahis giriş",
-    "Mekanbahis güncel link",
-    "canlı bahis",
-    "canlı casino",
-    "slot oyunları",
-    "Aviator",
-    "bonus",
-  ],
-  openGraph: {
-    title: "Mekanbahis | Güvenilir Bahsin Mekanı",
-    description:
-      "Lisanslı canlı bahis, casino ve slot oyunlarının resmi adresi. Güncel giriş, kampanyalar ve bonuslar burada.",
-    url: SITE_URL,
-    siteName: "Mekanbahis",
-    locale: "tr_TR",
-    type: "website",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://mekanbahis.vercel.app",
+  ),
+  authors: [{ name: "Mekanbahis" }],
+  creator: "Mekanbahis",
+  publisher: "Mekanbahis",
+  formatDetection: { email: false, address: false, telephone: false },
+  category: "entertainment",
+  icons: {
+    icon: [{ url: "/images/favicon.png", type: "image/png", sizes: "100x100" }],
+    apple: [{ url: "/images/favicon.png", type: "image/png", sizes: "100x100" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Mekanbahis | Güvenilir Bahsin Mekanı",
-    description:
-      "Lisanslı canlı bahis, casino ve slot oyunlarının resmi adresi.",
-  },
-  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -61,6 +63,7 @@ export default function RootLayout({
       className={`${inter.variable} ${sora.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden bg-[#0a0420] text-white selection:bg-pink/30 selection:text-white">
+        <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
         {children}
       </body>
     </html>

@@ -1,15 +1,17 @@
 import Link from "next/link";
 import { BrandMark } from "./BrandMark";
-import { SITE, NAV, CATEGORIES } from "@/lib/site";
+import { SITE, NAV, CATEGORIES, SEO_LINKS } from "@/lib/site";
 import { getAllPosts } from "@/lib/posts";
+import { getFeaturedPartners } from "@/lib/backlinks";
 
 export function Footer() {
   const latest = getAllPosts().slice(0, 4);
+  const partners = getFeaturedPartners(3);
 
   return (
     <footer className="border-t border-soft bg-[#070218] pb-24 pt-14 sm:pb-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
             <BrandMark size="lg" />
             <p className="mt-4 text-sm leading-6 text-[#b0a7d6]">
@@ -43,6 +45,40 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-display text-sm font-bold uppercase tracking-wider text-white">
+              Rehber & SEO
+            </h4>
+            <ul className="mt-4 space-y-2">
+              {SEO_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-[#b0a7d6] transition-colors hover:text-pink"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/partner-siteler"
+                  className="text-sm text-[#b0a7d6] transition-colors hover:text-pink"
+                >
+                  Partner Siteler
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/arama"
+                  className="text-sm text-[#b0a7d6] transition-colors hover:text-pink"
+                >
+                  Site İçi Arama
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -83,7 +119,27 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-soft pt-6 text-xs text-[#8a82b3] sm:flex-row sm:items-center">
+        <div className="mt-10 border-t border-soft pt-6">
+          <h4 className="font-display text-xs font-bold uppercase tracking-wider text-white">
+            Öne Çıkan Partner Siteler
+          </h4>
+          <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+            {partners.map((p) => (
+              <li key={p.slug}>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[#b0a7d6] transition-colors hover:text-pink"
+                >
+                  {p.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-6 flex flex-col items-start justify-between gap-4 border-t border-soft pt-6 text-xs text-[#8a82b3] sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} {SITE.name}. Tüm hakları saklıdır.</p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <span className="inline-flex items-center gap-1.5">

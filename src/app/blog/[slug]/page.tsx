@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import { redirect, notFound } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingCta } from "@/components/FloatingCta";
 import { Sidebar } from "@/components/Sidebar";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { JsonLd } from "@/components/JsonLd";
 import { PostCard } from "@/components/BlogList";
 import {
   POSTS,
@@ -12,7 +13,14 @@ import {
   getRelatedPosts,
   formatDate,
 } from "@/lib/posts";
-import { SITE } from "@/lib/site";
+import { SITE, CATEGORIES } from "@/lib/site";
+import {
+  buildMetadata,
+  articleJsonLd,
+  breadcrumbJsonLd,
+} from "@/lib/seo";
+
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return POSTS.map((p) => ({ slug: p.slug }));
@@ -28,16 +36,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return { title: "Yazı bulunamadı" };
-  return {
+  return buildMetadata({
     title: post.title,
     description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      type: "article",
-      publishedTime: post.date,
-    },
-  };
+    path: `/blog/${slug}`,
+    keywords: [post.category, post.categorySlug],
+    type: "article",
+    publishedTime: post.date,
+  });
 }
 
 export default async function BlogPost({
@@ -47,26 +53,42 @@ export default async function BlogPost({
 }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) notFound();
+  if (!post) {
+    if (CATEGORIES.some((c) => c.slug === slug)) {
+      redirect(`/blog?cat=${slug}`);
+    }
+    notFound();
+  }
   const related = getRelatedPosts(slug, 3);
 
   return (
     <>
       <Header />
+      <JsonLd
+        data={[
+          articleJsonLd({
+            title: post.title,
+            description: post.excerpt,
+            path: `/blog/${slug}`,
+            datePublished: post.date,
+          }),
+          breadcrumbJsonLd([
+            { name: "Anasayfa", path: "/" },
+            { name: "Blog", path: "/blog" },
+            { name: post.title, path: `/blog/${slug}` },
+          ]),
+        ]}
+      />
       <main className="flex-1">
         <section className="border-b border-soft">
           <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
-            <nav className="mb-5 flex items-center gap-2 text-xs text-[#b0a7d6]">
-              <Link href="/" className="transition-colors hover:text-pink">
-                Anasayfa
-              </Link>
-              <span>/</span>
-              <Link href="/blog" className="transition-colors hover:text-pink">
-                Blog
-              </Link>
-              <span>/</span>
-              <span className="text-white">{post.category}</span>
-            </nav>
+            <Breadcrumbs
+              items={[
+                { label: "Anasayfa", href: "/" },
+                { label: "Blog", href: "/blog" },
+                { label: post.category },
+              ]}
+            />
 
             <div className="flex flex-wrap items-center gap-2 text-xs">
               <span className="rounded-full border border-pink/30 bg-pink/10 px-2.5 py-0.5 font-medium text-[#ff7ab8]">

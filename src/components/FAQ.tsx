@@ -1,4 +1,4 @@
-const ITEMS = [
+export const FAQ_ITEMS = [
   {
     q: "Mekanbahis güncel giriş adresi nedir?",
     a: "Mekanbahis güncel giriş adresi mekanbahis592.com'dur. Erişim engellerinden etkilenmemek için bu sayfanın üst kısmındaki 'Güncel Giriş Adresi' butonunu kullanabilirsin; her zaman yeni adrese yönlendirilirsin.",
@@ -40,7 +40,7 @@ export function FAQ() {
         </div>
 
         <div className="mt-6 overflow-hidden rounded-2xl border border-soft bg-surface">
-          {ITEMS.map((item, i) => (
+          {FAQ_ITEMS.map((item, i) => (
             <details
               key={item.q}
               className="group border-b border-soft last:border-b-0 [&_summary::-webkit-details-marker]:hidden"
