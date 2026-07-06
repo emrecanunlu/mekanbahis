@@ -47,6 +47,9 @@ export const metadata: Metadata = {
   creator: "Mekanbahis",
   publisher: "Mekanbahis",
   formatDetection: { email: false, address: false, telephone: false },
+  verification: {
+    google: "YZRPeLO8hq0jAwLDTvxf5Sm-l842gd3Uv5dnR4Boh8A",
+  },
   category: "entertainment",
   icons: {
     icon: [{ url: "/images/favicon.png", type: "image/png", sizes: "100x100" }],
