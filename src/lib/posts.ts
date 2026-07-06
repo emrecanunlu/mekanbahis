@@ -23,7 +23,7 @@ export const POSTS: Post[] = [
 <p><strong>Mekanbahis</strong>, Türkiye'nin en güvenilir bahis ve casino platformlarından biri olarak hizmet vermeye devam ediyor. Erişim engelleri nedeniyle zaman zaman domain adresi güncellenmek zorunda kalsa da, platform her zaman aynı kalitede hizmetini sürdürüyor.</p>
 
 <h2>Güncel Giriş Adresi Nedir?</h2>
-<p>2026 yılı itibariyle Mekanbahis'in güncel giriş adresi <strong>mekanbahis592.com</strong>'dur. BTK tarafından uygulanan erişim engelleri sebebiyle domain numarası periyodik olarak güncellenir. Eski adresin engellenmesi durumunda yeni domain otomatik olarak devreye alınır ve kullanıcılar yeni adrese yönlendirilir.</p>
+<p>2026 yılı itibariyle Mekanbahis'in güncel giriş adresi <strong>mekanbahis600.com</strong>'dur. BTK tarafından uygulanan erişim engelleri sebebiyle domain numarası periyodik olarak güncellenir. Eski adresin engellenmesi durumunda yeni domain otomatik olarak devreye alınır ve kullanıcılar yeni adrese yönlendirilir.</p>
 
 <h2>Güncel Adrese Nasıl Ulaşılır?</h2>
 <p>Mekanbahis güncel adresine ulaşmanın birkaç güvenli yolu bulunur:</p>

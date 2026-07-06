@@ -15,13 +15,13 @@ export const SEO_PAGES: SeoPage[] = [
     title: "Mekanbahis Giriş 2026 | Güncel Giriş Adresi",
     h1: "Mekanbahis Giriş — Güncel Adres ve Güvenli Erişim",
     description:
-      "Mekanbahis giriş adresi 2026. mekanbahis592.com üzerinden güvenli giriş, üyelik ve bonus talebi. Erişim engeli çözümleri ve adım adım giriş rehberi.",
+      "Mekanbahis giriş adresi 2026. mekanbahis600.com üzerinden güvenli giriş, üyelik ve bonus talebi. Erişim engeli çözümleri ve adım adım giriş rehberi.",
     keywords: ["Mekanbahis giriş", "Mekanbahis login", "Mekanbahis üye girişi"],
     updatedAt: "2026-06-20",
     faq: [
       {
         q: "Mekanbahis'e nasıl giriş yapılır?",
-        a: "mekanbahis592.com adresine gidin, sağ üstteki Giriş butonuna tıklayın ve kullanıcı adı ile şifrenizi girin.",
+        a: "mekanbahis600.com adresine gidin, sağ üstteki Giriş butonuna tıklayın ve kullanıcı adı ile şifrenizi girin.",
       },
       {
         q: "Giriş yapamıyorum, ne yapmalıyım?",
@@ -29,7 +29,7 @@ export const SEO_PAGES: SeoPage[] = [
       },
     ],
     content: `
-<p><strong>Mekanbahis giriş</strong>, Türkiye'deki kullanıcıların lisanslı bahis ve casino platformuna erişim sağladığı resmi kapıdır. 2026 yılında güncel adres <strong>mekanbahis592.com</strong> olarak aktiftir.</p>
+<p><strong>Mekanbahis giriş</strong>, Türkiye'deki kullanıcıların lisanslı bahis ve casino platformuna erişim sağladığı resmi kapıdır. 2026 yılında güncel adres <strong>mekanbahis600.com</strong> olarak aktiftir.</p>
 <h2>Mekanbahis Giriş Adımları</h2>
 <ol>
 <li>Tarayıcınızda güncel domain adresini açın.</li>
@@ -48,13 +48,13 @@ export const SEO_PAGES: SeoPage[] = [
     title: "Mekanbahis Güncel Adres 2026 | Yeni Giriş Linki",
     h1: "Mekanbahis Güncel Adres — 2026 Yeni Domain",
     description:
-      "Mekanbahis güncel adres ve yeni giriş linki. mekanbahis592.com resmi domain. Erişim engeli sonrası adres değişikliği rehberi.",
-    keywords: ["Mekanbahis güncel adres", "Mekanbahis yeni link", "Mekanbahis592"],
+      "Mekanbahis güncel adres ve yeni giriş linki. mekanbahis600.com resmi domain. Erişim engeli sonrası adres değişikliği rehberi.",
+    keywords: ["Mekanbahis güncel adres", "Mekanbahis yeni link", "Mekanbahis600"],
     updatedAt: "2026-06-20",
     faq: [
       {
         q: "Mekanbahis güncel adresi nedir?",
-        a: "2026 itibariyle güncel adres mekanbahis592.com'dur.",
+        a: "2026 itibariyle güncel adres mekanbahis600.com'dur.",
       },
       {
         q: "Adres neden değişiyor?",
@@ -64,7 +64,7 @@ export const SEO_PAGES: SeoPage[] = [
     content: `
 <p><strong>Mekanbahis güncel adres</strong>, platforma kesintisiz erişim için kritik öneme sahiptir. Resmi tanıtım sitemiz üzerinden her zaman doğrulanmış linki bulabilirsiniz.</p>
 <h2>2026 Güncel Domain</h2>
-<p>Aktif domain: <strong>mekanbahis592.com</strong>. Önceki adreslerin engellenmesi durumunda yeni numara devreye alınır; kullanıcı bilgileri, bakiye ve bonuslar korunur.</p>
+<p>Aktif domain: <strong>mekanbahis600.com</strong>. Önceki adreslerin engellenmesi durumunda yeni numara devreye alınır; kullanıcı bilgileri, bakiye ve bonuslar korunur.</p>
 <h2>Güncel Adrese Nasıl Ulaşılır?</h2>
 <ul>
 <li>Bu tanıtım sitesini favorilere ekleyin.</li>
@@ -313,7 +313,7 @@ export const SEO_PAGES: SeoPage[] = [
     h1: "Mekanbahis Yeni Adres — Son Domain Değişikliği",
     description:
       "Mekanbahis yeni adres duyurusu. Domain güncellemesi sonrası giriş, hesap güvenliği ve bildirim kanalları.",
-    keywords: ["Mekanbahis yeni adres", "Mekanbahis domain", "Mekanbahis592 yeni"],
+    keywords: ["Mekanbahis yeni adres", "Mekanbahis domain", "Mekanbahis600 yeni"],
     updatedAt: "2026-06-20",
     faq: [
       {

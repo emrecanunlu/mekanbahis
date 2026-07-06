@@ -6,7 +6,7 @@ import { getFeaturedPartners } from "@/lib/backlinks";
 
 export function Footer() {
   const latest = getAllPosts().slice(0, 4);
-  const partners = getFeaturedPartners(3);
+  const partners = getFeaturedPartners(5);
 
   return (
     <footer className="border-t border-soft bg-[#070218] pb-24 pt-14 sm:pb-12">

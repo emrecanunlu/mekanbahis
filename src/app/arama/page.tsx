@@ -68,7 +68,9 @@ async function SearchResults({ query }: { query: string }) {
               <h2 className="font-display mt-2 text-lg font-bold text-white transition-colors group-hover:text-pink">
                 {r.title}
               </h2>
-              <p className="mt-1 text-sm leading-6 text-[#cfc6ef]">{r.excerpt}</p>
+              <p className="mt-1 text-sm leading-6 text-[#cfc6ef]">
+                {r.excerpt}
+              </p>
             </a>
           ) : (
             <Link
@@ -81,7 +83,9 @@ async function SearchResults({ query }: { query: string }) {
               <h2 className="font-display mt-2 text-lg font-bold text-white transition-colors group-hover:text-pink">
                 {r.title}
               </h2>
-              <p className="mt-1 text-sm leading-6 text-[#cfc6ef]">{r.excerpt}</p>
+              <p className="mt-1 text-sm leading-6 text-[#cfc6ef]">
+                {r.excerpt}
+              </p>
             </Link>
           )}
         </li>
@@ -97,7 +101,10 @@ async function SearchContent({ searchParams }: Props) {
 
   return (
     <>
-      <SearchForm defaultValue={query} placeholder="Mekanbahis giriş, bonus, casino…" />
+      <SearchForm
+        defaultValue={query}
+        placeholder="Mekanbahis giriş, bonus, casino…"
+      />
 
       {!query && (
         <div className="mt-8">
@@ -122,8 +129,8 @@ async function SearchContent({ searchParams }: Props) {
       {query.length >= 2 && (
         <div className="mt-8">
           <p className="mb-4 text-sm text-[#b0a7d6]">
-            <strong className="text-white">&quot;{query}&quot;</strong> için arama
-            sonuçları
+            <strong className="text-white">&quot;{query}&quot;</strong> için
+            arama sonuçları
           </p>
           <SearchResults query={query} />
         </div>
@@ -156,7 +163,11 @@ export default function SearchPage(props: Props) {
               sitelerde arama yapın.
             </p>
             <div className="mt-8">
-              <Suspense fallback={<div className="h-12 animate-pulse rounded-xl bg-surface" />}>
+              <Suspense
+                fallback={
+                  <div className="h-12 animate-pulse rounded-xl bg-surface" />
+                }
+              >
                 <SearchContent searchParams={props.searchParams} />
               </Suspense>
             </div>

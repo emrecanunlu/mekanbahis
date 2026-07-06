@@ -17,8 +17,16 @@ const STATIC_PAGES = [
   { title: "Oyunlar", url: "/oyunlar", excerpt: "Tüm oyun kategorileri" },
   { title: "Blog", url: "/blog", excerpt: "Rehber yazıları ve haberler" },
   { title: "İletişim", url: "/iletisim", excerpt: "Destek ve iletişim formu" },
-  { title: "Partner Siteler", url: "/partner-siteler", excerpt: "Önerilen bahis siteleri" },
-  { title: "Rehber", url: "/rehber", excerpt: "Mekanbahis SEO rehber sayfaları" },
+  {
+    title: "Partner Siteler",
+    url: "/partner-siteler",
+    excerpt: "Önerilen bahis siteleri",
+  },
+  {
+    title: "Rehber",
+    url: "/rehber",
+    excerpt: "Mekanbahis SEO rehber sayfaları",
+  },
 ];
 
 function normalize(s: string): string {
@@ -124,9 +132,7 @@ export function searchSite(query: string, limit = 30): SearchResult[] {
     }
   }
 
-  return results
-    .sort((a, b) => b.score - a.score)
-    .slice(0, limit);
+  return results.sort((a, b) => b.score - a.score).slice(0, limit);
 }
 
 export function getPopularSearches(): string[] {

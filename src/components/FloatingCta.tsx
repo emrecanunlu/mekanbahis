@@ -32,7 +32,7 @@ export function FloatingCta() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Telegram kanalı"
-          className="inline-flex h-10 cursor-pointer items-center gap-2 rounded-full border border-[#22d3ee]/40 bg-[#22d3ee]/10 px-3 text-sm font-semibold text-[#7dd3fc] transition-colors hover:bg-[#22d3ee]/20 sm:px-4"
+          className="inline-flex h-10 cursor-pointer items-center gap-2.5 rounded-full border border-[#22d3ee]/40 bg-[#22d3ee]/10 px-3.5 text-sm font-semibold text-[#7dd3fc] transition-colors hover:bg-[#22d3ee]/20 sm:gap-3 sm:px-5"
         >
           <TelegramIcon />
           <span className="hidden sm:inline">Telegram</span>
@@ -47,7 +47,7 @@ function TelegramIcon() {
     <svg
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="h-4 w-4"
+      className="h-4 w-4 shrink-0"
       aria-hidden="true"
     >
       <path d="M21.94 4.32a1 1 0 0 0-1.34-1.1L2.85 10.04c-.95.36-.95 1.7.02 2.04l4.55 1.6 1.74 5.6c.22.7 1.1.9 1.6.35l2.42-2.62 4.6 3.4c.7.52 1.7.13 1.85-.74l2.3-15.36ZM9.84 13.97l8.04-7.13-6.36 8.5-1.68 5.6-.72-5.6Z" />

@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     template: "%s | Mekanbahis",
   },
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://mekanbahis.vercel.app",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mekanbahisonline.com",
   ),
   authors: [{ name: "Mekanbahis" }],
   creator: "Mekanbahis",

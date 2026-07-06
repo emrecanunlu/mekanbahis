@@ -2,14 +2,13 @@ export const SITE = {
   name: "Mekanbahis",
   tagline: "Güvenilir Bahsin Mekanı",
   /** Tanıtım sitesinin kendi domain'i (SEO canonical için) */
-  promoUrl:
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://mekanbahis.vercel.app",
+  promoUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mekanbahisonline.com",
   /** Ana bahis sitesi */
-  domain: "mekanbahis592.com",
-  url: "https://mekanbahis592.com",
-  loginUrl: "https://mekanbahis592.com",
-  registerUrl: "https://mekanbahis592.com",
-  supportEmail: "destek@mekanbahis592.com",
+  domain: "mekanbahis600.com",
+  url: "https://mekanbahis600.com",
+  loginUrl: "https://mekanbahis600.com",
+  registerUrl: "https://mekanbahis600.com",
+  supportEmail: "destek@mekanbahis600.com",
   telegramUrl: "https://t.me/mekanbahis",
   locale: "tr_TR",
   language: "tr",
