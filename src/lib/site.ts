@@ -3,12 +3,12 @@ export const SITE = {
   tagline: "Güvenilir Bahsin Mekanı",
   /** Tanıtım sitesinin kendi domain'i (SEO canonical için) */
   promoUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mekanbahisonline.com",
-  /** Ana bahis sitesi */
-  domain: "mekanbahis600.com",
-  url: "https://mekanbahis600.com",
-  loginUrl: "https://mekanbahis600.com",
-  registerUrl: "https://mekanbahis600.com",
-  supportEmail: "destek@mekanbahis600.com",
+  /** Kalıcı giriş yönlendirme linki — domain değişse bile güncel adrese gider */
+  domain: "mkngrs.link/mekangiris",
+  url: "https://mkngrs.link/mekangiris",
+  loginUrl: "https://mkngrs.link/mekangiris",
+  registerUrl: "https://mkngrs.link/mekangiris",
+  supportEmail: "destek@mekanbahisonline.com",
   telegramUrl: "https://t.me/mekanbahis",
   locale: "tr_TR",
   language: "tr",

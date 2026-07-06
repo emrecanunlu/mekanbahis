@@ -16,7 +16,7 @@ export const BACKLINK_PARTNERS: BacklinkPartner[] = [
   {
     slug: "mekanbahis-resmi",
     name: "Mekanbahis Resmi",
-    url: "https://mekanbahis600.com",
+    url: "https://mkngrs.link/mekangiris",
     description:
       "Lisanslı canlı bahis, casino ve slot. %100 hoş geldin bonusu, 3 dk para çekim, 7/24 Türkçe destek.",
     badge: "Resmi Site",
@@ -26,7 +26,7 @@ export const BACKLINK_PARTNERS: BacklinkPartner[] = [
   {
     slug: "mekanbahis-guncel",
     name: "Mekanbahis Güncel Giriş",
-    url: "https://mekanbahis600.com",
+    url: "https://mkngrs.link/mekangiris",
     description:
       "Erişim engeli sonrası güncel domain adresi. Anında giriş, Papara ve kripto ile hızlı yatırım.",
     badge: "Güncel Link",
@@ -36,7 +36,7 @@ export const BACKLINK_PARTNERS: BacklinkPartner[] = [
   {
     slug: "mekanbahis-bonus",
     name: "Mekanbahis Bonus",
-    url: "https://mekanbahis600.com",
+    url: "https://mkngrs.link/mekangiris",
     description:
       "%100 hoş geldin, %50 yatırım ve haftalık kayıp bonusu. Düşük çevrim şartlarıyla ekstra kazanç.",
     badge: "Bonus",
@@ -46,7 +46,7 @@ export const BACKLINK_PARTNERS: BacklinkPartner[] = [
   {
     slug: "mekanbahis-casino",
     name: "Mekanbahis Casino",
-    url: "https://mekanbahis600.com",
+    url: "https://mkngrs.link/mekangiris",
     description:
       "Evolution ve Pragmatic Live ile 180+ canlı masa. Türkçe krupiye, Crazy Time, rulet ve blackjack.",
     badge: "Canlı Casino",
@@ -76,7 +76,7 @@ export const BACKLINK_PARTNERS: BacklinkPartner[] = [
   {
     slug: "mekanbahis-aviator",
     name: "Mekanbahis Aviator",
-    url: "https://mekanbahis600.com",
+    url: "https://mkngrs.link/mekangiris",
     description:
       "Spribe Aviator ve crash oyunları. Otomatik cash out, çift bahis ve günlük cashback.",
     badge: "Aviator",
@@ -86,7 +86,7 @@ export const BACKLINK_PARTNERS: BacklinkPartner[] = [
   {
     slug: "mekanbahis-mobil",
     name: "Mekanbahis Mobil",
-    url: "https://mekanbahis600.com",
+    url: "https://mkngrs.link/mekangiris",
     description:
       "Mobil tarayıcıdan uygulama indirmeden giriş. iOS ve Android uyumlu responsive arayüz.",
     badge: "Mobil",

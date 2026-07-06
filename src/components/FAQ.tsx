@@ -1,7 +1,7 @@
 export const FAQ_ITEMS = [
   {
     q: "Mekanbahis güncel giriş adresi nedir?",
-    a: "Mekanbahis güncel giriş adresi mekanbahis600.com'dur. Erişim engellerinden etkilenmemek için bu sayfanın üst kısmındaki 'Güncel Giriş Adresi' butonunu kullanabilirsin; her zaman yeni adrese yönlendirilirsin.",
+    a: "Mekanbahis güncel giriş linki mkngrs.link/mekangiris adresidir. Bu kalıcı yönlendirme linki domain değişse bile her zaman güncel adrese otomatik yönlendirir; sayfanın üst kısmındaki 'Güncel Giriş Adresi' butonunu da kullanabilirsin.",
   },
   {
     q: "Üyelik açmak ücretsiz mi?",
