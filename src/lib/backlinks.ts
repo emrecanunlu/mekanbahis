@@ -56,7 +56,7 @@ export const BACKLINK_PARTNERS: BacklinkPartner[] = [
   {
     slug: "usbahis-tanitim",
     name: "UsBahis Tanıtım",
-    url: "https://usbahis.vercel.app",
+    url: "https://www.usbahisonline.com",
     description:
       "UsBahis resmi tanıtım sitesi. Güncel giriş adresi, bonus rehberleri ve casino incelemeleri.",
     badge: "Partner",
@@ -66,7 +66,7 @@ export const BACKLINK_PARTNERS: BacklinkPartner[] = [
   {
     slug: "lakebahis-tanitim",
     name: "LakeBahis Tanıtım",
-    url: "https://lakebahis.vercel.app",
+    url: "https://www.lakebahisonline.com",
     description:
       "LakeBahis resmi tanıtım sitesi. Güncel giriş, oyun rehberleri ve kampanya bilgileri.",
     badge: "Partner",
