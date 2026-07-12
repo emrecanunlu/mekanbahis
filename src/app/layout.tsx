@@ -51,6 +51,9 @@ export const metadata: Metadata = {
     google: "YZRPeLO8hq0jAwLDTvxf5Sm-l842gd3Uv5dnR4Boh8A",
   },
   category: "entertainment",
+  alternates: {
+    types: { "application/rss+xml": "/feed.xml" },
+  },
   icons: {
     icon: [{ url: "/images/favicon.png", type: "image/png", sizes: "100x100" }],
     apple: [{ url: "/images/favicon.png", type: "image/png", sizes: "100x100" }],

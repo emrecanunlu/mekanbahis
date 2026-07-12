@@ -250,6 +250,33 @@ export const SEO_PAGE_KEYWORDS: Record<string, string[]> = {
     "Mekanbahis BTK engeli giriş",
     "Mekanbahis adres bildirimi",
   ],
+  "mekanbahis-telegram-giris": [
+    "Mekanbahis telegram",
+    "Mekanbahis telegram giriş",
+    "Mekanbahis telegram kanalı",
+    "t.me mekanbahis",
+    "Mekanbahis telegram link",
+    "Mekanbahis telegram güncel adres",
+    "Mekanbahis telegram duyuru",
+  ],
+  "mekanbahis-kayit-ol": [
+    "Mekanbahis kayıt ol",
+    "Mekanbahis üye ol",
+    "Mekanbahis üyelik",
+    "Mekanbahis kayıt",
+    "Mekanbahis hesap aç",
+    "Mekanbahis yeni üye",
+    "Mekanbahis ücretsiz kayıt",
+  ],
+  "mekanbahis-papara-yatirim": [
+    "Mekanbahis papara",
+    "Mekanbahis papara yatırım",
+    "Mekanbahis papara ile yatırım",
+    "Mekanbahis papara çekim",
+    "Mekanbahis papara minimum",
+    "Mekanbahis papara bonus",
+    "Mekanbahis hızlı yatırım",
+  ],
 };
 
 export const POST_KEYWORDS: Record<string, string[]> = {

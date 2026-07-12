@@ -1,5 +1,6 @@
 export const SITE = {
   name: "Mekanbahis",
+  brandSlug: "mekanbahis",
   tagline: "Güvenilir Bahsin Mekanı",
   /** Tanıtım sitesinin kendi domain'i (SEO canonical için) */
   promoUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mekanbahisonline.com",
@@ -16,6 +17,7 @@ export const SITE = {
 };
 
 export const HEADER_NAV = [
+  { label: "Giriş", href: "/rehber/mekanbahis-giris" },
   { label: "Oyunlar", href: "/oyunlar" },
   { label: "Rehber", href: "/rehber" },
   { label: "Blog", href: "/blog" },
@@ -39,13 +41,22 @@ export const CATEGORIES = [
   { slug: "guncel", name: "Güncel Giriş" },
 ];
 
-export const SEO_LINKS = [
+export const ENTRY_LINKS = [
   { label: "Mekanbahis Giriş", href: "/rehber/mekanbahis-giris" },
+  { label: "Güncel Giriş Linki", href: "/rehber/mekanbahis-guncel-giris" },
   { label: "Güncel Adres", href: "/rehber/mekanbahis-guncel-adres" },
+  { label: "Telegram Giriş", href: "/rehber/mekanbahis-telegram-giris" },
+  { label: "Mobil Giriş", href: "/rehber/mekanbahis-mobil-giris" },
+  { label: "Kayıt Ol", href: "/rehber/mekanbahis-kayit-ol" },
+  { label: "Papara Yatırım", href: "/rehber/mekanbahis-papara-yatirim" },
+  { label: "Yeni Adres", href: "/rehber/mekanbahis-yeni-adres" },
   { label: "Hoş Geldin Bonusu", href: "/rehber/mekanbahis-bonus" },
+];
+
+export const SEO_LINKS = [
+  ...ENTRY_LINKS,
   { label: "Canlı Bahis", href: "/rehber/mekanbahis-canli-bahis" },
   { label: "Canlı Casino", href: "/rehber/mekanbahis-casino" },
   { label: "Aviator", href: "/rehber/mekanbahis-aviator" },
-  { label: "Mobil Giriş", href: "/rehber/mekanbahis-mobil-giris" },
   { label: "Güvenilir mi?", href: "/rehber/mekanbahis-guvenilir-mi" },
 ];
