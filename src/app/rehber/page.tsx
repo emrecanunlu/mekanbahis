@@ -9,13 +9,14 @@ import { PartnerSites } from "@/components/PartnerSites";
 import { JsonLd } from "@/components/JsonLd";
 import { getAllSeoPages } from "@/lib/seo-pages";
 import { buildMetadata, breadcrumbJsonLd, webPageJsonLd } from "@/lib/seo";
+import { PAGE_KEYWORDS } from "@/lib/keywords";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mekanbahis Rehber | Giriş, Bonus ve Oyun Kılavuzları",
+  title: "Mekanbahis Rehber 2026 | Giriş, Bonus ve Oyun Kılavuzları",
   description:
-    "Mekanbahis rehber sayfaları: güncel giriş, bonus, canlı bahis, casino, Aviator, mobil giriş ve güvenilirlik incelemesi. SEO uyumlu detaylı kılavuzlar.",
+    "Mekanbahis rehber: güncel giriş linki, hoş geldin bonusu, canlı bahis, casino, slot, Aviator, mobil giriş ve güvenilirlik incelemesi. Tüm SEO rehber sayfaları.",
   path: "/rehber",
-  keywords: ["Mekanbahis rehber", "Mekanbahis kılavuz", "Mekanbahis bilgi"],
+  keywords: [...PAGE_KEYWORDS.rehber],
 });
 
 export default function RehberIndex() {

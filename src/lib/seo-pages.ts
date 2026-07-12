@@ -1,3 +1,5 @@
+import { SEO_PAGE_KEYWORDS } from "./keywords";
+
 export type SeoPage = {
   slug: string;
   title: string;
@@ -17,7 +19,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis giriş adresi 2026. mkngrs.link/mekangiris kalıcı linki üzerinden güvenli giriş, üyelik ve bonus talebi. Domain değişse bile otomatik yönlendirme.",
     keywords: ["Mekanbahis giriş", "Mekanbahis login", "Mekanbahis üye girişi"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-13",
     faq: [
       {
         q: "Mekanbahis'e nasıl giriş yapılır?",
@@ -50,7 +52,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis güncel adres ve kalıcı giriş linki. mkngrs.link/mekangiris — domain değişse bile otomatik yönlendirme.",
     keywords: ["Mekanbahis güncel adres", "Mekanbahis yeni link", "mekangiris"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-13",
     faq: [
       {
         q: "Mekanbahis güncel adresi nedir?",
@@ -81,7 +83,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis güncel giriş linki mkngrs.link/mekangiris. Kalıcı yönlendirme, mobil ve masaüstü giriş ipuçları.",
     keywords: ["Mekanbahis güncel giriş", "Mekanbahis link", "Mekanbahis erişim"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-13",
     faq: [
       {
         q: "Güncel giriş linki güvenli mi?",
@@ -106,7 +108,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis bonus rehberi: %100 hoş geldin, yatırım bonusu, kayıp iadesi ve Aviator cashback. Çevrim şartları ve talep adımları.",
     keywords: ["Mekanbahis bonus", "Mekanbahis hoş geldin", "Mekanbahis promosyon"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-13",
     faq: [
       {
         q: "Hoş geldin bonusu kaç TL?",
@@ -132,7 +134,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis canlı bahis: futbol, basketbol, tenis, e-spor. 1200+ maç, cash out, canlı izleme ve yüksek oranlar.",
     keywords: ["Mekanbahis canlı bahis", "Mekanbahis spor", "Mekanbahis iddaa"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-13",
     faq: [
       {
         q: "Canlı bahiste hangi sporlar var?",
@@ -158,7 +160,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis casino: Evolution Gaming, Pragmatic Live, 180+ canlı masa, Türkçe krupiye, Crazy Time ve rulet.",
     keywords: ["Mekanbahis casino", "Mekanbahis canlı casino", "Mekanbahis rulet"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-13",
     faq: [
       {
         q: "Türkçe krupiye var mı?",
@@ -183,7 +185,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis slot: Sweet Bonanza, Gates of Olympus, 5000+ video slot, jackpot ve megaways. Demo mod ve bonus buy.",
     keywords: ["Mekanbahis slot", "Mekanbahis Sweet Bonanza", "Mekanbahis slot oyunları"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-13",
     faq: [
       {
         q: "Slot demo modu var mı?",
@@ -208,7 +210,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis Aviator nasıl oynanır? Spribe crash oyunu, otomatik cash out, stratejiler ve günlük cashback.",
     keywords: ["Mekanbahis Aviator", "Mekanbahis crash", "Aviator giriş"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-13",
     faq: [
       {
         q: "Aviator minimum bahis?",
@@ -233,7 +235,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis mobil giriş: tarayıcıdan hızlı erişim, responsive arayüz, iOS/Android uyumluluk ve ana ekran kısayolu.",
     keywords: ["Mekanbahis mobil", "Mekanbahis mobil giriş", "Mekanbahis app"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-13",
     faq: [
       {
         q: "Mobil uygulama var mı?",
@@ -258,7 +260,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis güvenilir mi? Curaçao lisansı, SSL şifreleme, ödeme hızı, kullanıcı yorumları ve güvenlik analizi.",
     keywords: ["Mekanbahis güvenilir mi", "Mekanbahis lisans", "Mekanbahis yorum"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-13",
     faq: [
       {
         q: "Mekanbahis lisanslı mı?",
@@ -289,7 +291,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis ücretsiz bonus, deneme bonusu ve free spin fırsatları. Yeni üyelere özel promosyonlar ve çevrim şartları.",
     keywords: ["Mekanbahis ücretsiz bonus", "Mekanbahis deneme bonusu", "Mekanbahis free spin"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-13",
     faq: [
       {
         q: "Deneme bonusu var mı?",
@@ -314,7 +316,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis yeni adres duyurusu. Domain güncellemesi sonrası giriş, hesap güvenliği ve bildirim kanalları.",
     keywords: ["Mekanbahis yeni adres", "Mekanbahis domain", "mekangiris link"],
-    updatedAt: "2026-06-20",
+    updatedAt: "2026-07-13",
     faq: [
       {
         q: "Yeni adrese geçince hesabım silinir mi?",
@@ -335,9 +337,17 @@ export const SEO_PAGES: SeoPage[] = [
 ];
 
 export function getSeoPageBySlug(slug: string): SeoPage | undefined {
-  return SEO_PAGES.find((p) => p.slug === slug);
+  const page = SEO_PAGES.find((p) => p.slug === slug);
+  if (!page) return undefined;
+  return {
+    ...page,
+    keywords: SEO_PAGE_KEYWORDS[page.slug] ?? page.keywords,
+  };
 }
 
 export function getAllSeoPages(): SeoPage[] {
-  return SEO_PAGES;
+  return SEO_PAGES.map((p) => ({
+    ...p,
+    keywords: SEO_PAGE_KEYWORDS[p.slug] ?? p.keywords,
+  }));
 }

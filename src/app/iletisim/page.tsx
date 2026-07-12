@@ -7,13 +7,14 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
 import { buildMetadata, breadcrumbJsonLd, webPageJsonLd } from "@/lib/seo";
+import { PAGE_KEYWORDS } from "@/lib/keywords";
 
 export const metadata: Metadata = buildMetadata({
-  title: "İletişim",
+  title: "Mekanbahis İletişim | 7/24 Destek ve Telegram",
   description:
-    "Mekanbahis ile iletişime geçin. Üyelik, bonus, teknik destek ve genel sorularınız için formu doldurun veya Telegram kanalımıza yazın.",
+    "Mekanbahis iletişim: üyelik, bonus, giriş ve teknik destek için form veya Telegram kanalı. 7/24 Türkçe canlı destek, hızlı yanıt garantisi.",
   path: "/iletisim",
-  keywords: ["Mekanbahis iletişim", "Mekanbahis destek"],
+  keywords: [...PAGE_KEYWORDS.iletisim],
 });
 
 const CHANNELS = [
