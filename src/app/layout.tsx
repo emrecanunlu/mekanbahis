@@ -3,6 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { JsonLd } from "@/components/JsonLd";
 import {
+  absoluteUrl,
   buildMetadata,
   organizationJsonLd,
   websiteJsonLd,
@@ -52,6 +53,7 @@ export const metadata: Metadata = {
   },
   category: "entertainment",
   alternates: {
+    canonical: absoluteUrl("/"),
     types: { "application/rss+xml": "/feed.xml" },
   },
   icons: {

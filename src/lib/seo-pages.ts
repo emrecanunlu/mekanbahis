@@ -1,5 +1,6 @@
 import { SEO_PAGE_KEYWORDS } from "./keywords";
 import { ENTRY_SEO_PAGES } from "./entry-seo-pages";
+import { getSeoPageBody } from "./seo-page-bodies";
 
 export type SeoPage = {
   slug: string;
@@ -20,7 +21,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis giriş adresi 2026. mkngrs.link/mekangiris kalıcı linki üzerinden güvenli giriş, üyelik ve bonus talebi. Domain değişse bile otomatik yönlendirme.",
     keywords: ["Mekanbahis giriş", "Mekanbahis login", "Mekanbahis üye girişi"],
-    updatedAt: "2026-07-13",
+    updatedAt: "2026-07-28",
     faq: [
       {
         q: "Mekanbahis'e nasıl giriş yapılır?",
@@ -31,20 +32,7 @@ export const SEO_PAGES: SeoPage[] = [
         a: "DNS ayarlarını 8.8.8.8 yapın, önbelleği temizleyin veya bu sayfadaki güncel linki kullanın.",
       },
     ],
-    content: `
-<p><strong>Mekanbahis giriş</strong>, Türkiye'deki kullanıcıların lisanslı bahis ve casino platformuna erişim sağladığı resmi kapıdır. 2026 yılında güncel giriş linki <strong>mkngrs.link/mekangiris</strong> olarak aktiftir; domain değişikliklerinde bu link otomatik olarak yeni adrese yönlendirir.</p>
-<h2>Mekanbahis Giriş Adımları</h2>
-<ol>
-<li>Tarayıcınızda güncel domain adresini açın.</li>
-<li>Sağ üst köşedeki <strong>Giriş Yap</strong> butonuna tıklayın.</li>
-<li>Kullanıcı adı veya kayıtlı e-posta ile şifrenizi girin.</li>
-<li>İki faktörlü doğrulama aktifse SMS kodunu onaylayın.</li>
-<li>Hesabınıza yönlendirilerek bahis ve casino bölümlerine erişin.</li>
-</ol>
-<h2>Giriş Sorunları ve Çözümler</h2>
-<p>BTK erişim engeli nedeniyle domain periyodik güncellenir. Bu tanıtım sitesi her zaman güncel adresi yansıtır. DNS değişikliği, mobil veri veya VPN alternatifleri sorunu çözer.</p>
-<p>Yeni üyeler <strong>Üye Ol</strong> butonu ile 30 saniyede kayıt olabilir; ilk yatırıma %100 hoş geldin bonusu otomatik tanımlanır.</p>
-    `,
+    content: getSeoPageBody("mekanbahis-giris"),
   },
   {
     slug: "mekanbahis-guncel-adres",
@@ -53,7 +41,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis güncel adres ve kalıcı giriş linki. mkngrs.link/mekangiris — domain değişse bile otomatik yönlendirme.",
     keywords: ["Mekanbahis güncel adres", "Mekanbahis yeni link", "mekangiris"],
-    updatedAt: "2026-07-13",
+    updatedAt: "2026-07-28",
     faq: [
       {
         q: "Mekanbahis güncel adresi nedir?",
@@ -64,18 +52,7 @@ export const SEO_PAGES: SeoPage[] = [
         a: "BTK erişim engelleri nedeniyle domain numarası periyodik güncellenir; hesap bilgileri etkilenmez.",
       },
     ],
-    content: `
-<p><strong>Mekanbahis güncel adres</strong>, platforma kesintisiz erişim için kritik öneme sahiptir. Resmi tanıtım sitemiz üzerinden her zaman doğrulanmış linki bulabilirsiniz.</p>
-<h2>2026 Güncel Domain</h2>
-<p>Kalıcı giriş linki: <strong>mkngrs.link/mekangiris</strong>. Domain numarası değişse bile bu link otomatik olarak güncel adrese yönlendirir; kullanıcı bilgileri, bakiye ve bonuslar korunur.</p>
-<h2>Güncel Adrese Nasıl Ulaşılır?</h2>
-<ul>
-<li>Bu tanıtım sitesini favorilere ekleyin.</li>
-<li>Telegram kanalından duyuruları takip edin.</li>
-<li>Üyelik sırasında kayıtlı telefona SMS bildirimi gelir.</li>
-<li>DNS ayarını Google (8.8.8.8) veya Cloudflare (1.1.1.1) yapın.</li>
-</ul>
-    `,
+    content: getSeoPageBody("mekanbahis-guncel-adres"),
   },
   {
     slug: "mekanbahis-guncel-giris",
@@ -84,23 +61,14 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis güncel giriş linki mkngrs.link/mekangiris. Kalıcı yönlendirme, mobil ve masaüstü giriş ipuçları.",
     keywords: ["Mekanbahis güncel giriş", "Mekanbahis link", "Mekanbahis erişim"],
-    updatedAt: "2026-07-13",
+    updatedAt: "2026-07-28",
     faq: [
       {
         q: "Güncel giriş linki güvenli mi?",
         a: "Evet. mkngrs.link/mekangiris resmi yönlendirme linkidir; güncel domain SSL sertifikalıdır ve 256-bit şifreleme kullanır.",
       },
     ],
-    content: `
-<p><strong>Mekanbahis güncel giriş</strong> linki <strong>mkngrs.link/mekangiris</strong> adresidir. Domain değişikliklerinde otomatik yönlendirme sağlar. Phishing sitelerinden kaçınmak için yalnızca resmi tanıtım sayfasındaki linkleri kullanın.</p>
-<h2>Hızlı Giriş İpuçları</h2>
-<ul>
-<li><strong>mkngrs.link/mekangiris</strong> linkini tarayıcı yer imlerine kaydedin.</li>
-<li>Mobil cihazda ana ekrana kısayol ekleyin.</li>
-<li>Oturum açıkken otomatik giriş tercih edin.</li>
-<li>Şifrenizi düzenli güncelleyin ve güçlü parola kullanın.</li>
-</ul>
-    `,
+    content: getSeoPageBody("mekanbahis-guncel-giris"),
   },
   {
     slug: "mekanbahis-bonus",
@@ -109,24 +77,14 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis bonus rehberi: %100 hoş geldin, yatırım bonusu, kayıp iadesi ve Aviator cashback. Çevrim şartları ve talep adımları.",
     keywords: ["Mekanbahis bonus", "Mekanbahis hoş geldin", "Mekanbahis promosyon"],
-    updatedAt: "2026-07-13",
+    updatedAt: "2026-07-28",
     faq: [
       {
         q: "Hoş geldin bonusu kaç TL?",
         a: "İlk yatırımın %100'ü kadar, maksimum 20.000 TL bonus + 50 free spin.",
       },
     ],
-    content: `
-<p><strong>Mekanbahis bonus</strong> kampanyaları yeni ve mevcut üyeler için sürekli aktiftir. En popüler teklif %100 hoş geldin bonusudur.</p>
-<h2>Aktif Bonuslar</h2>
-<ul>
-<li><strong>Hoş Geldin:</strong> %100 + 50 FS, max 20.000 TL</li>
-<li><strong>Yatırım:</strong> Hafta içi her yatırıma %50</li>
-<li><strong>Kayıp:</strong> Haftalık net kaybın %25'i pazartesi</li>
-<li><strong>Aviator Cashback:</strong> Günlük %15 geri ödeme</li>
-</ul>
-<p>Bonus talebi yatırım ekranından veya canlı destekten yapılır. Çevrim şartları bonus türüne göre 1x–25x arasında değişir.</p>
-    `,
+    content: getSeoPageBody("mekanbahis-bonus"),
   },
   {
     slug: "mekanbahis-canli-bahis",
@@ -135,24 +93,14 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis canlı bahis: futbol, basketbol, tenis, e-spor. 1200+ maç, cash out, canlı izleme ve yüksek oranlar.",
     keywords: ["Mekanbahis canlı bahis", "Mekanbahis spor", "Mekanbahis iddaa"],
-    updatedAt: "2026-07-13",
+    updatedAt: "2026-07-28",
     faq: [
       {
         q: "Canlı bahiste hangi sporlar var?",
         a: "Futbol, basketbol, tenis, voleybol, e-spor ve 35+ spor dalı.",
       },
     ],
-    content: `
-<p><strong>Mekanbahis canlı bahis</strong> bölümünde Süper Lig, UEFA, NBA ve ATP turnuvalarına anlık oranlarla bahis yapabilirsiniz.</p>
-<h2>Öne Çıkan Özellikler</h2>
-<ul>
-<li>Maç öncesi ve canlı (in-play) bahis</li>
-<li>Cash out ile kupon erken bozma</li>
-<li>Canlı maç izleme (seçili müsabakalar)</li>
-<li>Sistem ve kombine kupon desteği</li>
-<li>İddaa fark oranları ile %30'a kadar ek getiri</li>
-</ul>
-    `,
+    content: getSeoPageBody("mekanbahis-canli-bahis"),
   },
   {
     slug: "mekanbahis-casino",
@@ -161,23 +109,14 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis casino: Evolution Gaming, Pragmatic Live, 180+ canlı masa, Türkçe krupiye, Crazy Time ve rulet.",
     keywords: ["Mekanbahis casino", "Mekanbahis canlı casino", "Mekanbahis rulet"],
-    updatedAt: "2026-07-13",
+    updatedAt: "2026-07-28",
     faq: [
       {
         q: "Türkçe krupiye var mı?",
         a: "Evet. Ezugi ve Pragmatic Live Türkçe masalar sunar.",
       },
     ],
-    content: `
-<p><strong>Mekanbahis casino</strong>, gerçek krupiyeler eşliğinde rulet, blackjack, baccarat ve game show oyunları sunar.</p>
-<h2>Popüler Masalar</h2>
-<ul>
-<li>Crazy Time, Monopoly Live, Mega Wheel</li>
-<li>Lightning Roulette, Türkçe Rulet</li>
-<li>Infinite Blackjack, Speed Baccarat</li>
-<li>HD yayın, mobil uyumlu arayüz</li>
-</ul>
-    `,
+    content: getSeoPageBody("mekanbahis-casino"),
   },
   {
     slug: "mekanbahis-slot",
@@ -186,23 +125,14 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis slot: Sweet Bonanza, Gates of Olympus, 5000+ video slot, jackpot ve megaways. Demo mod ve bonus buy.",
     keywords: ["Mekanbahis slot", "Mekanbahis Sweet Bonanza", "Mekanbahis slot oyunları"],
-    updatedAt: "2026-07-13",
+    updatedAt: "2026-07-28",
     faq: [
       {
         q: "Slot demo modu var mı?",
         a: "Evet. Çoğu slot ücretsiz demo ile denenebilir.",
       },
     ],
-    content: `
-<p><strong>Mekanbahis slot</strong> kataloğunda Pragmatic Play, NetEnt, Hacksaw ve 40+ sağlayıcının 5.000'den fazla oyunu yer alır.</p>
-<h2>En Çok Oynanan Slotlar</h2>
-<ul>
-<li>Sweet Bonanza, Gates of Olympus, Starlight Princess</li>
-<li>Book of Dead, Wanted Dead or a Wild</li>
-<li>Mega Moolah progressive jackpot</li>
-<li>Megaways serisi (100.000+ yol)</li>
-</ul>
-    `,
+    content: getSeoPageBody("mekanbahis-slot"),
   },
   {
     slug: "mekanbahis-aviator",
@@ -211,23 +141,14 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis Aviator nasıl oynanır? Spribe crash oyunu, otomatik cash out, stratejiler ve günlük cashback.",
     keywords: ["Mekanbahis Aviator", "Mekanbahis crash", "Aviator giriş"],
-    updatedAt: "2026-07-13",
+    updatedAt: "2026-07-28",
     faq: [
       {
         q: "Aviator minimum bahis?",
         a: "0.10 TL'den başlar, maksimum 100 TL.",
       },
     ],
-    content: `
-<p><strong>Mekanbahis Aviator</strong>, Spribe'in popüler crash oyunudur. Uçak yükselirken çarpanı yakalayıp cash out yaparak kazanç elde edersiniz.</p>
-<h2>Nasıl Oynanır?</h2>
-<ol>
-<li>Bahis miktarını girin ve onaylayın.</li>
-<li>Uçak havalandığında çarpan artar.</li>
-<li>Crash olmadan Cash Out yapın.</li>
-<li>Çift bahis ve otomatik cash out kullanılabilir.</li>
-</ol>
-    `,
+    content: getSeoPageBody("mekanbahis-aviator"),
   },
   {
     slug: "mekanbahis-mobil-giris",
@@ -236,23 +157,14 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis mobil giriş: tarayıcıdan hızlı erişim, responsive arayüz, iOS/Android uyumluluk ve ana ekran kısayolu.",
     keywords: ["Mekanbahis mobil", "Mekanbahis mobil giriş", "Mekanbahis app"],
-    updatedAt: "2026-07-13",
+    updatedAt: "2026-07-28",
     faq: [
       {
         q: "Mobil uygulama var mı?",
         a: "Resmi mobil uygulama yok; tarayıcı üzerinden tam özellikli erişim sağlanır.",
       },
     ],
-    content: `
-<p><strong>Mekanbahis mobil giriş</strong>, uygulama indirmeden telefon veya tabletten tüm özelliklere erişim sunar.</p>
-<h2>Mobil Kullanım</h2>
-<ul>
-<li>Chrome, Safari ve Firefox uyumlu</li>
-<li>Responsive tasarım, dokunmatik optimizasyon</li>
-<li>Ana ekrana kısayol ekleme (PWA benzeri)</li>
-<li>Mobil ödeme ve Papara desteği</li>
-</ul>
-    `,
+    content: getSeoPageBody("mekanbahis-mobil-giris"),
   },
   {
     slug: "mekanbahis-guvenilir-mi",
@@ -261,7 +173,7 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis güvenilir mi? Curaçao lisansı, SSL şifreleme, ödeme hızı, kullanıcı yorumları ve güvenlik analizi.",
     keywords: ["Mekanbahis güvenilir mi", "Mekanbahis lisans", "Mekanbahis yorum"],
-    updatedAt: "2026-07-13",
+    updatedAt: "2026-07-28",
     faq: [
       {
         q: "Mekanbahis lisanslı mı?",
@@ -272,18 +184,7 @@ export const SEO_PAGES: SeoPage[] = [
         a: "Onaylı hesaplarda ortalama 3 dakikada Papara/kripto çekim tamamlanır.",
       },
     ],
-    content: `
-<p><strong>Mekanbahis güvenilir mi</strong> sorusu, platformu tercih etmeden önce en çok sorulan konulardan biridir.</p>
-<h2>Güvenilirlik Kriterleri</h2>
-<ul>
-<li><strong>Lisans:</strong> Curaçao eGaming uluslararası denetim</li>
-<li><strong>SSL:</strong> 256-bit uçtan uca şifreleme</li>
-<li><strong>Ödeme:</strong> Komisyonsuz, 3 dk ortalama çekim</li>
-<li><strong>Destek:</strong> 7/24 Türkçe canlı sohbet</li>
-<li><strong>Oyunlar:</strong> Evolution, Pragmatic gibi lisanslı sağlayıcılar</li>
-</ul>
-<p>18 yaş altı kullanım yasaktır. Sorumlu oyun prensiplerine uyulması önerilir.</p>
-    `,
+    content: getSeoPageBody("mekanbahis-guvenilir-mi"),
   },
   {
     slug: "mekanbahis-ucretsiz-bonus",
@@ -292,23 +193,14 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis ücretsiz bonus, deneme bonusu ve free spin fırsatları. Yeni üyelere özel promosyonlar ve çevrim şartları.",
     keywords: ["Mekanbahis ücretsiz bonus", "Mekanbahis deneme bonusu", "Mekanbahis free spin"],
-    updatedAt: "2026-07-13",
+    updatedAt: "2026-07-28",
     faq: [
       {
         q: "Deneme bonusu var mı?",
         a: "Yeni üyelere %100 hoş geldin + 50 free spin verilir; minimum 50 TL yatırım gerekir.",
       },
     ],
-    content: `
-<p><strong>Mekanbahis ücretsiz bonus</strong> arayanlar için en cazip teklif hoş geldin paketidir: %100 yatırım eşleştirmesi ve 50 ücretsiz dönüş.</p>
-<h2>Ücretsiz / Düşük Riskli Fırsatlar</h2>
-<ul>
-<li>Slot demo modu — gerçek para olmadan deneme</li>
-<li>50 free spin — hoş geldin paketinde</li>
-<li>Kayıp bonusu — çevrimsiz geri ödeme</li>
-<li>Aviator cashback — günlük %15</li>
-</ul>
-    `,
+    content: getSeoPageBody("mekanbahis-ucretsiz-bonus"),
   },
   {
     slug: "mekanbahis-yeni-adres",
@@ -317,23 +209,14 @@ export const SEO_PAGES: SeoPage[] = [
     description:
       "Mekanbahis yeni adres duyurusu. Domain güncellemesi sonrası giriş, hesap güvenliği ve bildirim kanalları.",
     keywords: ["Mekanbahis yeni adres", "Mekanbahis domain", "mekangiris link"],
-    updatedAt: "2026-07-13",
+    updatedAt: "2026-07-28",
     faq: [
       {
         q: "Yeni adrese geçince hesabım silinir mi?",
         a: "Hayır. Tüm veriler merkezi sunucuda saklanır, aynı bilgilerle giriş yapılır.",
       },
     ],
-    content: `
-<p><strong>Mekanbahis yeni adres</strong> duyuruları Telegram, SMS ve e-posta ile paylaşılır. Domain değişse bile kalıcı giriş linki <strong>mkngrs.link/mekangiris</strong> her zaman güncel adrese yönlendirir.</p>
-<h2>Domain Değişikliğinde Yapılacaklar</h2>
-<ol>
-<li><strong>mkngrs.link/mekangiris</strong> kalıcı linkini kullanın — yeni domain aramanıza gerek kalmaz.</li>
-<li>Eski domain yer imlerini silin, kalıcı linki kaydedin.</li>
-<li>Phishing sitelerine dikkat edin — SSL ve domain numarasını kontrol edin.</li>
-<li>Sorun yaşarsanız 7/24 canlı desteğe yazın.</li>
-</ol>
-    `,
+    content: getSeoPageBody("mekanbahis-yeni-adres"),
   },
   ...ENTRY_SEO_PAGES,
 ];
